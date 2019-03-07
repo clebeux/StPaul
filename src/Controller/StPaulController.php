@@ -12,8 +12,8 @@ class StPaulController extends AbstractController
      */
     public function index()
     {
-        return $this->render('st_paul/index.html.twig', [
-            'controller_name' => 'StPaulController',
+        return $this->render('st_paul/st_paul.html.twig', [
+            //'controller_name' => 'StPaulController',
         ]);
     }
 }
