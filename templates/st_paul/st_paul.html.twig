@@ -3,8 +3,14 @@
 {% block title %}SAINT PAUL DU TERRAY{% endblock %}
 {% block stylesheets %}<link href="css/styly.css" rel="stylesheet" />{% endblock %}
 
+
 {% block body %}
+{% for unEssai in essai %}
+<p>{{ unEssai.essai }}</p>
+{% endfor %}
+
 <main class="main">
+
 
 	<header-null class="header-null">
 		<header class="header">

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\SEJOUR;
 
 class StPaulController extends AbstractController
 {
@@ -12,8 +13,10 @@ class StPaulController extends AbstractController
      */
     public function index()
     {
+        $repo = $this->getDoctrine()->getRepository(SEJOUR::class);
+        $essai = $repo->findAll();
         return $this->render('st_paul/st_paul.html.twig', [
-            //'controller_name' => 'StPaulController',
+            'essai' => $essai
         ]);
     }
 }
