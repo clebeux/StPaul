@@ -21,6 +21,16 @@ class SEJOUR
      */
     private $essai;
 
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $position;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $value;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +44,30 @@ class SEJOUR
     public function setEssai(?string $essai): self
     {
         $this->essai = $essai;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?string $position): self
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(?string $value): self
+    {
+        $this->value = $value;
 
         return $this;
     }
