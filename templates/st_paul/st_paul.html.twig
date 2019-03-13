@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SAINT PAUL DU TERRAY{% endblock %}
+{% block stylesheets %}<link href="css/styly.css" rel="stylesheet" />{% endblock %}
+
+
+{% block body %}
+<main class="main">
+
+
+	<header-null class="header-null">
+		<header class="header">
+			<h1>SAINT PAUL DU TERRAY</a></h1>
+			<menu-null class="menu-null">
+				<div class="menu">
+					<a href="#" class="menu_link">Index</a>
+					<a href="#" class="menu_link">Manifestation</a>
+					<a href="#" class="menu_link">Facturation</a>
+					<a href="#" class="menu_link">Contact</a>
+				</div>
+			</menu-null>
+		</header>
+	</header-null>
+
+
+
+	<right class="right">
+		<h2>Liste des séjours prévus </h2>
+		<fieldset>
+			<sejour>
+					{% for sejours in sejours2 %}
+					
+						<h2><p>{{ sejours.SEJINTITULE}}</p></h2>
+						{{sejours.SEJMONTANTMBI}} €
+						<br>
+						A partir du {{sejours.sejdtedeb |date("m/d/Y") }}
+						<br>
+						{{sejours.SEJDUREE}} nuits
+
+		
+
+					{% endfor %}
+			</sejour>
+		
+		</fieldset>
+	</right>
+</main>
+{% endblock %}
+
+
+{% block footer %}
+    Copyright &copy; 2019 Saint Paul du Terray
+{% endblock %}

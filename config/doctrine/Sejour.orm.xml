@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Entity\Sejour\Sejour" table="sejour">
+    <id name="sejno" type="integer" column="SEJNO">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="sejintitule" type="string" column="SEJINTITULE" length="128" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="sejmontantmbi" type="decimal" column="SEJMONTANTMBI" precision="10" scale="2" nullable="true"/>
+    <field name="sejdtedeb" type="date" column="SEJDTEDEB" nullable="true"/>
+    <field name="sejduree" type="smallint" column="SEJDUREE" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>
