@@ -5,70 +5,119 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\SEJOURRepository")
+ * Sejour
+ *
+ * @ORM\Table(name="sejour")
+ * @ORM\Entity(repositoryClass="App\Repository\SejourRepository")
  */
-class SEJOUR
+class Sejour
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="SEJNO", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $sejno;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string|null
+     *
+     * @ORM\Column(name="SEJINTITULE", type="string", length=128, nullable=true)
      */
-    private $essai;
+    private $sejintitule;
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=true)
+     * @var string|null
+     *
+     * @ORM\Column(name="SEJMONTANTMBI", type="decimal", precision=10, scale=2, nullable=true)
      */
-    private $position;
+    private $sejmontantmbi;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @var \DateTime|null
+     *
+     * @ORM\Column(name="SEJDTEDEB", type="date", nullable=true)
      */
-    private $value;
+    private $sejdtedeb;
 
-    public function getId(): ?int
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="SEJDUREE", type="smallint", nullable=true)
+     */
+    private $sejduree;
+
+    public function getSejno(): ?int
     {
-        return $this->id;
+        return $this->sejno;
     }
 
-    public function getEssai(): ?string
+    public function getSejintitule(): ?string
     {
-        return $this->essai;
+        return $this->sejintitule;
     }
 
-    public function setEssai(?string $essai): self
+    public function setSejintitule(?string $sejintitule): self
     {
-        $this->essai = $essai;
+        $this->sejintitule = $sejintitule;
 
         return $this;
     }
 
-    public function getPosition(): ?string
+    public function getSejmontantmbi()
     {
-        return $this->position;
+        return $this->sejmontantmbi;
     }
 
-    public function setPosition(?string $position): self
+    public function setSejmontantmbi($sejmontantmbi): self
     {
-        $this->position = $position;
+        $this->sejmontantmbi = $sejmontantmbi;
 
         return $this;
     }
 
-    public function getValue(): ?string
+    public function getSejdtedeb(): ?\DateTimeInterface
     {
-        return $this->value;
+        return $this->sejdtedeb;
     }
 
-    public function setValue(?string $value): self
+
+
+    public function setSejdtedeb(?\DateTimeInterface $sejdtedeb): self
     {
-        $this->value = $value;
+        $this->sejdtedeb = $sejdtedeb;
 
         return $this;
     }
+
+    public function getSejduree(): ?int
+    {
+        return $this->sejduree;
+    }
+
+    public function setSejduree(?int $sejduree): self
+    {
+        $this->sejduree = $sejduree;
+
+        return $this;
+    }
+
+    public function getSejdtefin(): ?\DateTimeInterface
+    {
+        return $this->sejdtedeb->add(new \DateInterval('P'.$this->sejduree.'D'));
+    }
+
+    /**
+     * Formatage jj-mm-aaaa 
+     * @param $pDte : date � formater
+     * @return mixed
+     */
+    public function getSejDteFormatFR($pDte)
+    {
+        return substr($pDte, 0,4).substr($pDte, 4);
+    }
+
+
 }

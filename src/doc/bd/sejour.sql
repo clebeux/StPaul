@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sejour`
+-- Structure de la table `SEJOUR`
 --
 
-CREATE TABLE IF NOT EXISTS `sejour` (
+CREATE TABLE IF NOT EXISTS `SEJOUR` (
   `SEJNO` int(11) NOT NULL AUTO_INCREMENT,
   `SEJINTITULE` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
   `SEJMONTANTMBI` decimal(10,2) DEFAULT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `sejour` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Contenu de la table `sejour`
+-- Contenu de la table `SEJOUR`
 --
 
 INSERT INTO `sejour` (`SEJNO`, `SEJINTITULE`, `SEJMONTANTMBI`, `SEJDTEDEB`, `SEJDUREE`) VALUES

@@ -6,12 +6,12 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\SEJOUR;
 
-class SejourFixtures extends Fixture
+class SEJOURFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-         $sejour = new SEJOUR();
-         $sejour->setPosition("left")
+         $SEJOUR = new SEJOUR();
+         $SEJOUR->setPosition("left")
                 ->setValue("
                 <h2>Madame, Monsieur,</h2>
 			<p>
@@ -30,23 +30,23 @@ class SejourFixtures extends Fixture
                 ");
 		/*
 				$bdd = new PDO('mysql:host=localhost;dbname=bdstpaul;charset=utf8', 'root');
-				$sejours = $bdd->query('select * from sejour order by sejno');
-				foreach ($sejours as $sejour):
-					<sejour>
-						<h2><p>echo $sejour['SEJINTITULE']</p></h2>
-						echo $sejour['SEJMONTANTMBI'].'€' ?><BR/>
-						echo 'A partir du '.$sejour['SEJDTEDEB'] ?>
-						echo $sejour['SEJDUREE'].' nuits' ?>
-					</sejour>
+				$SEJOURs = $bdd->query('select * from SEJOUR order by sejno');
+				foreach ($SEJOURs as $SEJOUR):
+					<SEJOUR>
+						<h2><p>echo $SEJOUR['SEJINTITULE']</p></h2>
+						echo $SEJOUR['SEJMONTANTMBI'].'€' ?><BR/>
+						echo 'A partir du '.$SEJOUR['SEJDTEDEB'] ?>
+						echo $SEJOUR['SEJDUREE'].' nuits' ?>
+					</SEJOUR>
 				endforeach
 
-				$sejour->setPosition("right")
+				$SEJOUR->setPosition("right")
                 ->setValue("<h2>Liste des séjours prévus </h2>
 				<fieldset>
 				
 				</fieldset>");*/
 
-         $manager->persist($sejour);
+         $manager->persist($SEJOUR);
 
         $manager->flush();
     }

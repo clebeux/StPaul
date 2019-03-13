@@ -15,13 +15,13 @@ class StPaulController extends AbstractController
     public function index()
     {
         $repo = $this->getDoctrine()->getRepository(SEJOUR::class);
-        $sejour = $repo->findAll();
+        $SEJOUR = $repo->findAll();
 
         $bdd = new PDO('mysql:host=localhost;dbname=bdstpaul;charset=utf8', 'root');
-		$sejours2 = $bdd->query('select * from sejour order by sejno');
+		$SEJOURs2 = $bdd->query('select * from SEJOUR order by sejno');
         return $this->render('st_paul/st_paul.html.twig', [
-            'sejours' => $sejour,
-            'sejours2' => $sejours2
+            'SEJOURs' => $SEJOUR,
+            'SEJOURs2' => $SEJOURs2
         ]);
     }
 }

@@ -25,9 +25,9 @@
 	<noscreen/>
 
 		<left class="left">
-			{% for sejour in sejours %}
-				{% if sejour.position == "left" %}
-					{{ sejour.value |trans|raw}}
+			{% for SEJOUR in SEJOURs %}
+				{% if SEJOUR.position == "left" %}
+					{{ SEJOUR.value |trans|raw}}
 				{% endif %}	
 			{% endfor %}
 		</left>
@@ -37,20 +37,20 @@
 	<right class="right">
 		<h2>Liste des séjours prévus </h2>
 		<fieldset>
-			<sejour>
-					{% for sejours in sejours2 %}
+			<SEJOUR>
+					{% for SEJOURs in SEJOURs2 %}
 					
-						<h2><p>{{ sejours.SEJINTITULE}}</p></h2>
-						{{sejours.SEJMONTANTMBI}} €
+						<h2><p>{{ SEJOURs.SEJINTITULE}}</p></h2>
+						{{SEJOURs.SEJMONTANTMBI}} €
 						<br>
-						A partir du {{sejours.SEJDTEDEB}}
+						A partir du {{SEJOURs.SEJDTEDEB}}
 						<br>
-						{{sejours.SEJDUREE}} nuits
+						{{SEJOURs.SEJDUREE}} nuits
 
 		
 
 					{% endfor %}
-			</sejour>
+			</SEJOUR>
 		
 		</fieldset>
 	</right>
