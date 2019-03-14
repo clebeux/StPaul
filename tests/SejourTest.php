@@ -23,8 +23,10 @@ class SejourTest extends TestCase
 	protected function setUp()
     	{
         $this->object = new Sejour(1, 'Classe de mer', 170, '2016-05-02', 10);
-        $date = new date();
-        $this->object->setSejdtedeb(new DateTimeInterface('2016-05-02'));
+        $date = new \DateTime('2016-05-02');
+   
+        $this->object->setSejdtedeb($date);
+        //$this->object->setSejdtedeb(new DateTimeInterface('2016-05-02'));
         }
         
 

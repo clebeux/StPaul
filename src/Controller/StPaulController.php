@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\SEJOUR;
+use App\Entity\Sejour;
 use \PDO;
 
 class StPaulController extends AbstractController
@@ -14,14 +14,25 @@ class StPaulController extends AbstractController
      */
     public function index()
     {
-        $repo = $this->getDoctrine()->getRepository(SEJOUR::class);
-        $SEJOUR = $repo->findAll();
-
-        $bdd = new PDO('mysql:host=localhost;dbname=bdstpaul;charset=utf8', 'root');
-		$SEJOURs2 = $bdd->query('select * from SEJOUR order by sejno');
-        return $this->render('st_paul/st_paul.html.twig', [
-            'SEJOURs' => $SEJOUR,
-            'SEJOURs2' => $SEJOURs2
+        return $this->render('st_paul/index.html.twig', [
+            'controller_name' => 'StPaulController',
         ]);
+
+    }
+
+
+    /**
+     * @Route("/home", name="home")
+     */
+    public function home()
+    {
+        
+        $repo = $this->getDoctrine()->getRepository(Sejour::class);
+        $sejours = $repo->findAll();
+        return $this->render('st_paul/st_paul.html.twig', [
+            'controller_name' => 'HomeController.php',
+            'sejours' => $sejours
+        ]);
+
     }
 }

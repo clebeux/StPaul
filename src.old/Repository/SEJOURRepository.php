@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Sejour;
+use App\Entity\SEJOUR;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Sejour|null find($id, $lockMode = null, $lockVersion = null)
- * @method Sejour|null findOneBy(array $criteria, array $orderBy = null)
- * @method Sejour[]    findAll()
- * @method Sejour[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method SEJOUR|null find($id, $lockMode = null, $lockVersion = null)
+ * @method SEJOUR|null findOneBy(array $criteria, array $orderBy = null)
+ * @method SEJOUR[]    findAll()
+ * @method SEJOUR[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SejourRepository extends ServiceEntityRepository
+class SEJOURRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Sejour::class);
+        parent::__construct($registry, SEJOUR::class);
     }
 
     // /**
-    //  * @return Sejour[] Returns an array of Sejour objects
+    //  * @return SEJOUR[] Returns an array of SEJOUR objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class SejourRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Sejour
+    public function findOneBySomeField($value): ?SEJOUR
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')
