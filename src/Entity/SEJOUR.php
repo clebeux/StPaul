@@ -110,4 +110,36 @@ class Sejour
         return $this;
     }
 
+
+
+    //method calcul
+    public function PourcentReduc(int $valeur, int $pourcent)
+    {
+        $calcul = $valeur*($pourcent/100);
+        return $calcul;
+    }
+
+    //Quotient Familial
+    public function PourcentFamilial(int $valeur)
+    {
+        $pourcent = 10;
+        $calcul = $valeur*($pourcent/100);
+        return $calcul;
+    }
+
+    //2 enfants
+    public function Pourcent2Enfants(int $valeur)
+    {
+        $pourcent = 20;
+        $calcul = $valeur*($pourcent/100);
+        return $calcul;
+    }
+
+    //3 enfants
+    public function Pourcent3Enfants(int $valeur)
+    {
+        $pourcent = 40;
+        $calcul = $valeur*($pourcent/100);
+        return $calcul;
+    }
 }

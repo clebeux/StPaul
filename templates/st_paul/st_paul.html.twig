@@ -47,16 +47,15 @@
 		<fieldset>
 			<SEJOUR>
 					{% for sejour in sejours %}
-					
-						<h2><p>{{ sejour.SEJINTITULE}}</p></h2>
+
+						<h2><p>{{ sejour.sejintitule}}</p></h2>
 						{{sejour.SEJMONTANTMBI}} €
 						<br>
-						A partir du {{sejour.SEJDTEDEB}}
+						A partir du {{sejour.SEJDTEDEB | date("d/m/y")}}
 						<br>
 						{{sejour.SEJDUREE}} nuits
-
 		
-
+						{{sejour.pourcentReduc(100, 5)}}
 					{% endfor %}
 			</SEJOUR>
 		
